@@ -1,0 +1,332 @@
+/* ==================== */
+/* FONT FACE DEFINITIONS */
+/* ==================== */
+@font-face {
+  font-family: 'Segment7Standard';
+  src: url('https://fonts.cdnfonts.com/css/segment7') format('woff');
+  font-weight: normal;
+  font-style: italic;
+}
+
+/* ================= */
+/* CLOCK CONTAINER */
+/* ================= */
+.clock-wrapper {
+  position: relative;
+  text-align: center;
+  margin: 20px;
+  padding: 20px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  width: 160px;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.clock-wrapper:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 16px rgba(0, 0, 0, 0.15);
+}
+
+/* ============== */
+/* CLOCK LABELS */
+/* ============== */
+.clock-title {
+  font-size: 16px;
+  margin-bottom: 4px;
+  font-weight: 600;
+  color: #2c3e50;
+}
+
+.time-zone {
+  font-size: 12px;
+  color: #7f8c8d;
+  margin-bottom: 10px;
+}
+
+/* ============= */
+/* ANALOG CLOCK */
+/* ============= */
+.clock {
+  position: relative;
+  width: 120px;
+  height: 120px;
+  border: 2px solid #2c3e50;
+  border-radius: 50%;
+  margin: 0 auto 10px;
+  background-color: #f9f9f9;
+}
+
+/* CLOCK HANDS */
+.hand {
+  position: absolute;
+  bottom: 50%;
+  left: 50%;
+  transform-origin: bottom center;
+  border-radius: 3px;
+}
+
+.hour-hand {
+  height: 35px;
+  width: 4px;
+  background-color: #2c3e50;
+}
+
+.minute-hand {
+  height: 50px;
+  width: 2px;
+  background-color: #2c3e50;
+}
+
+.second-hand {
+  height: 55px;
+  width: 1px;
+  background-color: #e74c3c;
+}
+
+.center-dot {
+  position: absolute;
+  width: 8px;
+  height: 8px;
+  background: #2c3e50;
+  border-radius: 50%;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 2;
+}
+
+/* ============== */
+/* DIGITAL CLOCK */
+/* ============== */
+.digital-time {
+  font-family: 'Segment7Standard', monospace;
+  font-size: 16px;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-top: 12px;
+  padding: 8px 12px;
+  background: rgba(241, 242, 246, 0.7);
+  border-radius: 6px;
+  display: inline-block;
+  letter-spacing: 1px;
+  position: relative;
+  overflow: hidden;
+  box-shadow: 
+    0 2px 4px rgba(0,0,0,0.1),
+    inset 0 0 0 1px rgba(255,255,255,0.3);
+  animation: pulse 1s infinite alternate;
+}
+
+.digital-time::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(
+    135deg,
+    rgba(255,255,255,0.3) 0%,
+    rgba(255,255,255,0) 50%,
+    rgba(255,255,255,0.3) 100%
+  );
+  z-index: -1;
+}
+
+/* ============ */
+/* REMOVE BUTTON */
+/* ============ */
+.remove-btn {
+  position: absolute;
+  right: 10px;
+  top: 10px;
+  background: #e74c3c;
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 24px;
+  height: 24px;
+  font-size: 14px;
+  line-height: 24px;
+  text-align: center;
+  cursor: pointer;
+  padding: 0;
+  transition: background 0.2s;
+}
+
+.remove-btn:hover {
+  background: #c0392b;
+}
+
+/* ================= */
+/* ANIMATION KEYFRAMES */
+/* ================= */
+@keyframes pulse {
+  0% { opacity: 0.95; }
+  100% { opacity: 1; }
+}
+
+/* ================= */
+/* APP CONTAINER */
+/* ================= */
+.clock-app {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  padding: 30px 20px;
+  max-width: 1200px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.app-title {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 30px;
+  font-size: 2.2rem;
+}
+
+/* ============== */
+/* FORM STYLES */
+/* ============== */
+.form-container {
+  width: 100%;
+  max-width: 600px;
+  margin-bottom: 30px;
+}
+
+.form {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+  padding: 25px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-width: 180px;
+}
+
+.form-group label {
+  font-size: 14px;
+  color: #2c3e50;
+  margin-bottom: 8px;
+  font-weight: 500;
+}
+
+.form-group input {
+  padding: 10px 15px;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  font-size: 15px;
+  transition: border 0.2s;
+}
+
+.form-group input:focus {
+  border-color: #3498db;
+  outline: none;
+}
+
+.buttons {
+  display: flex;
+  gap: 10px;
+  align-self: flex-end;
+  width: 100%;
+}
+
+.add-button,
+.reset-button {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+  font-size: 15px;
+  transition: all 0.2s;
+  flex: 1;
+  text-align: center;
+}
+
+.add-button {
+  background-color: #3498db;
+  color: white;
+}
+
+.add-button:hover {
+  background-color: #2980b9;
+  transform: translateY(-1px);
+}
+
+.reset-button {
+  background-color: #e74c3c;
+  color: white;
+}
+
+.reset-button:hover {
+  background-color: #c0392b;
+  transform: translateY(-1px);
+}
+
+.error-message {
+  color: #e74c3c;
+  font-size: 14px;
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* ================= */
+/* CLOCKS GRID */
+/* ================= */
+.clocks-container {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 25px;
+  width: 100%;
+}
+
+/* ================= */
+/* MEDIA QUERIES */
+/* ================= */
+@media (max-width: 768px) {
+  .clock-app {
+    padding: 20px 15px;
+  }
+  
+  .app-title {
+    font-size: 1.8rem;
+  }
+  
+  .form {
+    flex-direction: column;
+    padding: 20px;
+  }
+  
+  .add-button {
+    align-self: stretch;
+  }
+  
+  .clock-wrapper {
+    width: 140px;
+    padding: 15px;
+  }
+  
+  .clock {
+    width: 100px;
+    height: 100px;
+  }
+}
+
+@media (max-width: 480px) {
+  .clock-wrapper {
+    width: 120px;
+    margin: 10px;
+  }
+}
