@@ -81,7 +81,7 @@ function ClockApp() {
 
   return (
     <div className="clock-app">
-      <h1 className="app-title">World Clocks</h1>
+      <h1 className="app-title">Мировое время</h1>
       
       <div className="form-container">
         <div className="form">

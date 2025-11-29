@@ -15,9 +15,10 @@ function Clock({ title, timezone, onRemove }) {
   const minutes = local.getMinutes();
   const seconds = local.getSeconds();
 
-  const hourDeg = ((hours % 12) + minutes / 60) * 30;
-  const minuteDeg = minutes * 6;
-  const secondDeg = seconds * 6;
+  // Calculate rotations in degrees
+  const hourDeg = ((hours % 12) + minutes / 60) * 30; // 30 degrees per hour + minutes/60 of an hour
+  const minuteDeg = minutes * 6; // 6 degrees per minute
+  const secondDeg = seconds * 6; // 6 degrees per second
 
   const timeString = local.toLocaleTimeString();
 
@@ -26,17 +27,26 @@ function Clock({ title, timezone, onRemove }) {
       <div className="clock-title">{title}</div>
       <div className="time-zone">GMT{timezone >= 0 ? '+' : ''}{timezone}</div>
       <div className="clock">
-        <div
+        <div 
           className="hand hour-hand"
-          style={{ transform: `rotate(${hourDeg}deg)` }}
+          style={{
+            transform: `rotate(${hourDeg}deg)`,
+            transition: secondDeg === 0 ? 'none' : 'transform 0.3s cubic-bezier(0.4, 2.5, 0.5, 1)'
+          }}
         />
-        <div
+        <div 
           className="hand minute-hand"
-          style={{ transform: `rotate(${minuteDeg}deg)` }}
+          style={{
+            transform: `rotate(${minuteDeg}deg)`,
+            transition: secondDeg === 0 ? 'none' : 'transform 0.3s cubic-bezier(0.4, 2.5, 0.5, 1)'
+          }}
         />
-        <div
+        <div 
           className="hand second-hand"
-          style={{ transform: `rotate(${secondDeg}deg)` }}
+          style={{
+            transform: `rotate(${secondDeg}deg)`,
+            transition: secondDeg === 0 ? 'transform 0s' : 'transform 0.3s cubic-bezier(0.4, 2.5, 0.5, 1)'
+          }}
         />
         <div className="center-dot" />
       </div>
