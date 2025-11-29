@@ -1,7 +1,7 @@
 # Мировые часы
 
 [![Vercel Deploy](https://img.shields.io/github/deployments/alexander-bakshaev/ra-homeworks-6-lifecycle-http-watches/production?label=vercel&logo=vercel)](https://vercel.com/alexander-bakshaev/ra-homeworks-6-lifecycle-http-watches)
-[![Live Demo](https://img.shields.io/badge/demo-live-success?style=flat&logo=vercel)](https://ra-homeworks-6-lifecycle-http-watches.vercel.app)
+[![Live Demo](https://img.shields.io/badge/demo-live-success?style=flat&logo=vercel)](https://ra-homeworks-6-lifecycle-http-watches-hwvfeydja.vercel.app)
 
 Приложение для отображения текущего времени в разных часовых поясах.
 

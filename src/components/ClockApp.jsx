@@ -92,7 +92,7 @@ function ClockApp() {
               value={title}
               onChange={(e) => setTitle(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="e.g. New York"
+              placeholder="Например: Москва"
             />
           </div>
           
@@ -104,7 +104,7 @@ function ClockApp() {
               value={timezone}
               onChange={(e) => setTimezone(e.target.value)}
               onKeyPress={handleKeyPress}
-              placeholder="e.g. -5"
+              placeholder="Например: 3"
               min="-12"
               max="14"
               step="0.5"
